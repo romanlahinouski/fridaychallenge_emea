@@ -5,6 +5,7 @@
     <StartupObject>RestaurantGuide.Program</StartupObject>
     <GuestSecretsId>e0c491cd-2abf-4ecd-a91c-22fe4777e61e</GuestSecretsId>
     <AssemblyName>RestaurantGuide_API</AssemblyName>
+    <UserSecretsId>a365a07b-e641-4933-9716-857b2c82f590</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -51,6 +52,12 @@
     <Protobuf Include="Guests\Protos\RegisterGuestMessage.proto">
       <GrpcServices>Client</GrpcServices>
     </Protobuf>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="startApp.sh">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

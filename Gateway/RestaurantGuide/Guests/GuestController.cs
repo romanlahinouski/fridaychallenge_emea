@@ -30,8 +30,7 @@ namespace RestaurantGuide.Guests
             await mediator.Send(new CreateGuestCommand(createGuestRequest.PhoneNumber,
                 createGuestRequest.FirstName,
                 createGuestRequest.LastName,
-                createGuestRequest.Email,
-                createGuestRequest.DateOfBirth));
+                createGuestRequest.Email));
 
             return Created("",null);
         }
