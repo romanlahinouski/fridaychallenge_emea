@@ -6,6 +6,7 @@
     <AssemblyName>RestaurantGuide_OrderFulfilment_API</AssemblyName>
     <StartupObject>RestaurantGuide.OrderFulfilment.API.Program</StartupObject>
     <NoWin32Manifest>true</NoWin32Manifest>
+    <UserSecretsId>c112dbcc-6346-4650-98bb-93fd954daf78</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
