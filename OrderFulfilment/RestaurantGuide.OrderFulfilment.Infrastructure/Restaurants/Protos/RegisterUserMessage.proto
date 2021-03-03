@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+option csharp_namespace = "RestaurantGuide.OrderFulfilment.Infrastructure.Restaurants.Protos";
+
+
+
+service UserRegistrationServiceProto {
+
+	rpc RegisterUser(UserRegistrationRequest) returns (google.protobuf.Empty);
+}
+
+
+
+message UserRegistrationRequest{
+	string UserFirstName = 1;
+	string UserLastName = 2;
+	string UserEmail = 3;
+	string UserPhoneNumber = 4;
+	int32 RestaurantId = 5;
+}

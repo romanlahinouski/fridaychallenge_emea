@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="AppDynamicsConfig.json" />
+    <None Remove="Base\Protos\DecimalValue.proto" />
+    <None Remove="Orders\Protos\DishMessage.proto" />
+    <None Remove="Orders\Protos\IngredientMessage.proto" />
+    <None Remove="Orders\Protos\OrderDetailsDtoMessage.proto" />
+    <None Remove="Orders\Protos\OrderFulfilmentService.proto" />
+    <None Remove="Orders\Protos\OrderItemDtoMessage.proto" />
+    <None Remove="Restaurants\Protos\RegisterUserMessage.proto" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ErikEJ.EntityFrameworkCore.DgmlBuilder" Version="3.1.0" />
+    <PackageReference Include="Grpc.AspNetCore" Version="2.34.0" />
+    <PackageReference Include="Grpc.Tools" Version="2.34.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="5.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.2.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RestaurantGuide.OrderFulfilment.Application\RestaurantGuide.OrderFulfilment.Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="Base\Protos\DecimalValue.proto" GrpcServices="None" />
+    <Protobuf Include="Orders\Protos\DishMessage.proto" GrpcServices="None" />
+    <Protobuf Include="Orders\Protos\IngredientMessage.proto" GrpcServices="None" />
+    <Protobuf Include="Orders\Protos\OrderDetailsDtoMessage.proto" GrpcServices="None" />
+    <Protobuf Include="Orders\Protos\OrderFulfilmentService.proto" GrpcServices="Server" />
+    <Protobuf Include="Orders\Protos\OrderItemDtoMessage.proto" GrpcServices="None" />
+    <Protobuf Include="Restaurants\Protos\RegisterUserMessage.proto" GrpcServices="Server" />
+  </ItemGroup>
+</Project>

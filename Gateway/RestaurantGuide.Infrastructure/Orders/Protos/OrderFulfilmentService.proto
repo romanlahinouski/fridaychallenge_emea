@@ -1,0 +1,40 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "RestaurantGuide.Infrastructure.Orders.Protos";
+
+
+import "google/protobuf/empty.proto";
+import "Orders/Protos/DishMessage.proto";
+import "Orders/Protos/OrderItemDtoMessage.proto";
+import "Orders/Protos/OrderDetailsDtoMessage.proto";
+
+
+
+service OrderFulfilmentServiceProto {
+	rpc GetAllRestaurantDishes(google.protobuf.Empty) returns (GetAllRestaurantDishesResponse);
+
+	rpc GetDishesByNames(google.protobuf.Empty) returns (google.protobuf.Empty);
+
+	rpc PutOrder(PutOrderRequest) returns (google.protobuf.Empty);
+
+	rpc CloseOrder(google.protobuf.Empty) returns (google.protobuf.Empty);
+	
+	rpc GetOrderDetails(GetOrderDetailsRequest) returns (OrderDetailsDto);
+
+}
+
+message GetAllRestaurantDishesResponse{
+	repeated Dish Dishes = 1;
+}
+
+
+message PutOrderRequest{
+ repeated OrderItemDto OrderItems = 1;
+ int32 GuestId = 2;
+}
+
+message GetOrderDetailsRequest{
+	int32 OrderId = 1;
+}
+
+

@@ -1,0 +1,8 @@
+﻿syntax="proto3";
+
+option csharp_namespace = "RestaurantGuide.Infrastructure.Orders.Protos";
+
+message OrderItemDto {
+	int32 DishId = 1;
+	int32 Count = 2;
+}

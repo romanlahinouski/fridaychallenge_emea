@@ -1,0 +1,10 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "RestaurantGuide.OrderFulfilment.Infrastructure.Orders.Protos";
+
+
+message Ingredient {
+	string Name = 1;	
+	float Amount = 2;
+	string UnitType = 3;
+}

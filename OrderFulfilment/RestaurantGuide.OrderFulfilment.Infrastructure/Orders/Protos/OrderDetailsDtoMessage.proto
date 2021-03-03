@@ -1,0 +1,10 @@
+﻿syntax="proto3";
+
+option csharp_namespace = "RestaurantGuide.Orderfulfilment.Infrastructure.Orders.Protos";
+import "Orders/Protos/OrderItemDtoMessage.proto";
+
+message OrderDetailsDto{
+	int32 OrderId = 1;
+	repeated OrderItemDto OrderItems = 2;
+	int32 Amount = 3;
+}

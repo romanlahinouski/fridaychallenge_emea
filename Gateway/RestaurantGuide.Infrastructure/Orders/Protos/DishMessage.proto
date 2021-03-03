@@ -1,0 +1,13 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "RestaurantGuide.Infrastructure.Orders.Protos";
+
+//import "Base/Protos/DecimalValue.proto";
+//import "Orders/Protos/IngredientMessage.proto";
+
+message Dish {
+	string DishName = 1;
+    int32 Price = 2;
+	string Description = 3;
+	//repeated Ingredient Ingredients = 4;
+}

@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Orders\**" />
+    <Compile Remove="Restaurants\Specifications\**" />
+    <EmbeddedResource Remove="Orders\**" />
+    <EmbeddedResource Remove="Restaurants\Specifications\**" />
+    <None Remove="Orders\**" />
+    <None Remove="Restaurants\Specifications\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Restaurants\Dishes\Ingredients\" />
+    <Folder Include="DomainServices\" />
+    <Folder Include="Base\Specifications\" />
+  </ItemGroup>
+
+</Project>

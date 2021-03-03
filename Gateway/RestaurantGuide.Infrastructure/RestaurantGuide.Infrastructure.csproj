@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Base\Protos\DecimalValue.proto" />
+    <None Remove="Orders\Protos\DishMessage.proto" />
+    <None Remove="Orders\Protos\IngredientMessage.proto" />
+    <None Remove="Orders\Protos\OrderDetailsDtoMessage.proto" />
+    <None Remove="Orders\Protos\OrderFulfilmentService.proto" />
+    <None Remove="Orders\Protos\OrderItemDtoMessage.proto" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RestaurantGuide.Domain\RestaurantGuide.Domain.csproj" />
+    <ProjectReference Include="..\RestaurantGuide.Application\RestaurantGuide.Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.14.0" />
+    <PackageReference Include="Grpc.AspNetCore.Server.ClientFactory" Version="2.35.0" />
+    <PackageReference Include="Grpc.Tools" Version="2.35.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="3.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.0" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.2.4" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="3.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>   
+    <Protobuf Include="Base\Protos\DecimalValue.proto" GrpcServices="None" />
+    <Protobuf Include="Orders\Protos\DishMessage.proto" GrpcServices="None" />
+    <Protobuf Include="Orders\Protos\IngredientMessage.proto" GrpcServices="None" />
+    <Protobuf Include="Orders\Protos\OrderDetailsDtoMessage.proto" />
+    <Protobuf Include="Orders\Protos\OrderFulfilmentService.proto" GrpcServices="Client" />
+    <Protobuf Include="Orders\Protos\OrderItemDtoMessage.proto" GrpcServices="None" />    
+  </ItemGroup>
+</Project>
