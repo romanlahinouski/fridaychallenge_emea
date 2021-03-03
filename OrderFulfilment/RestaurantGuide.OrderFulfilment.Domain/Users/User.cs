@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using RestaurantGuide.Domain.Visits;
-using RestaurantGuide.OrderFulfilment.Domain.Users.Orders;
+using RestaurantGuide.OrderFulfilment.Domain.Guests.Orders;
 
-namespace RestaurantGuide.OrderFulfilment.Domain.Users
+namespace RestaurantGuide.OrderFulfilment.Domain.Guests
 {
-    public class User
+    public class Guest
     {
         public string FirstName { get; private set; }
         public string LastName { get; private set; }
@@ -15,17 +15,17 @@ namespace RestaurantGuide.OrderFulfilment.Domain.Users
         //public Address Address { get; private set; }
     
 
-        public int UserId { get; set; }
+        public int GuestId { get; set; }
 
      
         public List<Visit> Visits { get; set; }
             = new List<Visit>();
 
-        public User()
+        public Guest()
         {
             //EFCore
         }
-        private  User(string firstName,
+        private  Guest(string firstName,
          string lastName,
          string email,
          string phoneNumber)
@@ -36,13 +36,13 @@ namespace RestaurantGuide.OrderFulfilment.Domain.Users
             PhoneNumber = phoneNumber;
     
         }     
-        public static User CreateUser(
+        public static Guest CreateGuest(
             string firstName,
             string lastName,
             string email,
             string phoneNumber)
         {
-            return new User(firstName, lastName, email, phoneNumber);
+            return new Guest(firstName, lastName, email, phoneNumber);
         }
 
  

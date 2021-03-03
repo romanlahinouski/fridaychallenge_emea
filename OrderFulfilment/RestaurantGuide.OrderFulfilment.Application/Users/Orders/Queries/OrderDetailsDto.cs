@@ -1,4 +1,4 @@
-﻿using RestaurantGuide.OrderFulfilment.Domain.Users.Orders;
+﻿using RestaurantGuide.OrderFulfilment.Domain.Guests.Orders;
 using System.Collections.Generic;
 
 namespace RestaurantGuide.OrderFulfilment.Application.Orders.Queries

@@ -5,18 +5,18 @@ using MediatR;
 
 namespace RestaurantGuide.OrderFulfilment.Application.Restaurants
 {
-    public class RegisterUserCommandHandler : AsyncRequestHandler<RegisterUserCommand>
+    public class RegisterGuestCommandHandler : AsyncRequestHandler<RegisterGuestCommand>
     {
-        private readonly IUserRegistrationContext userRegistrationContext;
+        private readonly IGuestRegistrationContext GuestRegistrationContext;
 
-        public RegisterUserCommandHandler(IUserRegistrationContext userRegistrationContext)
+        public RegisterGuestCommandHandler(IGuestRegistrationContext GuestRegistrationContext)
         {
-            this.userRegistrationContext = userRegistrationContext;
+            this.GuestRegistrationContext = GuestRegistrationContext;
         }
 
-        protected override async Task Handle(RegisterUserCommand request, CancellationToken cancellationToken)
+        protected override async Task Handle(RegisterGuestCommand request, CancellationToken cancellationToken)
         {
-           await userRegistrationContext.RegisterUser(
+           await GuestRegistrationContext.RegisterGuest(
                 request);            
         }
     }

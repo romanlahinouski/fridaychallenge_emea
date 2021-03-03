@@ -1,6 +1,6 @@
 ﻿using RestaurantGuide.Domain.Restaurants.Dishes;
 
-namespace RestaurantGuide.OrderFulfilment.Domain.Users.Orders
+namespace RestaurantGuide.OrderFulfilment.Domain.Guests.Orders
 {
     public class OrderItem
     {

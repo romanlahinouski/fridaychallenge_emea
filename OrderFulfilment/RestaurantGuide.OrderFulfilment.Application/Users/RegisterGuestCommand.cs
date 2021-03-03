@@ -2,9 +2,9 @@
 using System;
 namespace RestaurantGuide.OrderFulfilment.Application.Restaurants
 {
-    public class RegisterUserCommand : IRequest
+    public class RegisterGuestCommand : IRequest
     {       
-        public RegisterUserCommand(string email,
+        public RegisterGuestCommand(string email,
             string phoneNumber,
             int restaurantId,
             string firstName = default,

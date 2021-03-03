@@ -30,7 +30,7 @@ message GetAllRestaurantDishesResponse{
 
 message PutOrderRequest{
  repeated OrderItemDto OrderItems = 1;
- int32 UserId = 2;
+ int32 GuestId = 2;
 }
 
 message GetOrderDetailsRequest{

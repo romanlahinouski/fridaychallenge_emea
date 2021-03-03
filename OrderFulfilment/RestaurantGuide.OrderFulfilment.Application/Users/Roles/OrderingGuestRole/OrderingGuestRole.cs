@@ -1,36 +1,36 @@
-﻿using RestaurantGuide.Domain.Users;
-using RestaurantGuide.OrderFulfilment.Domain.Users;
-using RestaurantGuide.OrderFulfilment.Domain.Users.Orders;
-using RestaurantGuide.OrderFulfilment.Users.Orders;
+﻿using RestaurantGuide.Domain.Guests;
+using RestaurantGuide.OrderFulfilment.Domain.Guests;
+using RestaurantGuide.OrderFulfilment.Domain.Guests.Orders;
+using RestaurantGuide.OrderFulfilment.Guests.Orders;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace RestaurantGuide.OrderFulfilment.Users.Roles.OrderingUserRole
+namespace RestaurantGuide.OrderFulfilment.Guests.Roles.OrderingGuestRole
 {
-    public class OrderingUserRole : IOrderingUserRole
+    public class OrderingGuestRole : IOrderingGuestRole
     {
 
-        public OrderingUserRole()
+        public OrderingGuestRole()
         {
 
         }
 
 
-        private void CheckIfUserRegistered(User user)
+        private void CheckIfGuestRegistered(Guest Guest)
         {
 
         }
 
-        public void MakeOrder(Order order, User user)
+        public void MakeOrder(Order order, Guest Guest)
         {
-            if (user == null || order == null)
+            if (Guest == null || order == null)
                 throw new ArgumentNullException();
             
-            if (!user.IsRegisteredForVisit())
-                throw new UserNotRegisterForAVisitException("User not registerd for a visit",user.UserId);
+            if (!Guest.IsRegisteredForVisit())
+                throw new GuestNotRegisterForAVisitException("Guest not registerd for a visit",Guest.GuestId);
 
-            user.MakeOrder(order);
+            Guest.MakeOrder(order);
         }
     }
 }

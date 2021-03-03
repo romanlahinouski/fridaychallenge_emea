@@ -2,7 +2,7 @@
 using RestaurantGuide.Domain.Base;
 using RestaurantGuide.Infrastructure;
 using RestaurantGuide.OrderFulfilment.Application;
-using RestaurantGuide.OrderFulfilment.Users.Orders;
+using RestaurantGuide.OrderFulfilment.Guests.Orders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +20,7 @@ namespace RestaurantGuide.OrderFulfilment.Modules
                 .AsImplementedInterfaces();
 
             builder.RegisterType<PutOrderContext>().As<IPutOrderContext>();
-            builder.RegisterType<UserRegistrationContext>().As<IUserRegistrationContext>();
+            builder.RegisterType<GuestRegistrationContext>().As<IGuestRegistrationContext>();
         }
     }
 }

@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace RestaurantGuide.OrderFulfilment.Domain.Users.Orders
+namespace RestaurantGuide.OrderFulfilment.Domain.Guests.Orders
 {
     public interface IOrderRepository
     {
-        public Order GetUnpaidOrders(int userId);
+        public Order GetUnpaidOrders(int GuestId);
 
         public void PutOrder(Order order);
 

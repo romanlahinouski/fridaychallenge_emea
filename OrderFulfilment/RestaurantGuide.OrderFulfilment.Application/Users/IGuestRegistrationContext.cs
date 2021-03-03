@@ -3,8 +3,8 @@ using RestaurantGuide.OrderFulfilment.Application.Restaurants;
 
 namespace RestaurantGuide.OrderFulfilment.Application
 {
-    public interface IUserRegistrationContext
+    public interface IGuestRegistrationContext
     {
-        public Task RegisterUser(RegisterUserCommand registerUserCommand); 
+        public Task RegisterGuest(RegisterGuestCommand registerGuestCommand); 
     }
 }

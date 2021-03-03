@@ -1,8 +1,8 @@
 ﻿using RestaurantGuide.Domain.Restaurants.Addresses;
 using RestaurantGuide.Domain.Restaurants.Cuisines;
-using RestaurantGuide.Domain.Restaurants.RestaurantUsers;
-using RestaurantGuide.Domain.Users;
-using RestaurantGuide.OrderFulfilment.Domain.Users;
+using RestaurantGuide.Domain.Restaurants.RestaurantGuests;
+using RestaurantGuide.Domain.Guests;
+using RestaurantGuide.OrderFulfilment.Domain.Guests;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,8 +24,8 @@ namespace RestaurantGuide.Domain.Restaurants
         public Cuisine Cuisine { get; private set; }
 
 
-        private List<RestaurantUser> currentUsers
-            = new List<RestaurantUser>();
+        private List<RestaurantGuest> currentGuests
+            = new List<RestaurantGuest>();
 
         public string Street { get; private set; }
         public string City { get; private set; }
@@ -99,29 +99,29 @@ namespace RestaurantGuide.Domain.Restaurants
             return maxNumberOfGuests;
         }
 
-        public int GetCurrentNumberOfUsers()
+        public int GetCurrentNumberOfGuests()
         {
-            return currentUsers.Count;
+            return currentGuests.Count;
         }
 
-        public void RegisterUser(User user)
+        public void RegisterGuest(Guest Guest)
         {
 
-            var restaurantUser = new RestaurantUser { UserId = user.UserId, RestaurantId = Id };
+            var restaurantGuest = new RestaurantGuest { GuestId = Guest.GuestId, RestaurantId = Id };
 
 
-            currentUsers.Add(restaurantUser);
+            currentGuests.Add(restaurantGuest);
         }
 
 
-        //public IReadOnlyCollection<User> GetCurrentUsers()
+        //public IReadOnlyCollection<Guest> GetCurrentGuests()
         //{
-        //    return currentUsers.Select(u =;
+        //    return currentGuests.Select(u =;
         //}
 
         public int GetRemainingCapacity()
         {
-            return maxNumberOfGuests - currentUsers.Count;
+            return maxNumberOfGuests - currentGuests.Count;
         }
     }
 }

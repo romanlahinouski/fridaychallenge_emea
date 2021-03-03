@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using RestaurantGuide.OrderFulfilment.Domain.Orders;
-using RestaurantGuide.OrderFulfilment.Domain.Users.Orders;
+using RestaurantGuide.OrderFulfilment.Domain.Guests.Orders;
 using System.Threading;
 using System.Threading.Tasks;
 

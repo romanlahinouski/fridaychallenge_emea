@@ -1,11 +1,11 @@
 ﻿using RestaurantGuide.Domain.Base;
-using RestaurantGuide.OrderFulfilment.Domain.Users;
-using RestaurantGuide.OrderFulfilment.Domain.Users.Orders;
+using RestaurantGuide.OrderFulfilment.Domain.Guests;
+using RestaurantGuide.OrderFulfilment.Domain.Guests.Orders;
 
-namespace RestaurantGuide.OrderFulfilment.Users.Roles.OrderingUserRole
+namespace RestaurantGuide.OrderFulfilment.Guests.Roles.OrderingGuestRole
 {
-    public interface IOrderingUserRole : IBaseRole<User>
+    public interface IOrderingGuestRole : IBaseRole<Guest>
     {
-        public void MakeOrder(Order order,User user);
+        public void MakeOrder(Order order,Guest Guest);
     }
 }

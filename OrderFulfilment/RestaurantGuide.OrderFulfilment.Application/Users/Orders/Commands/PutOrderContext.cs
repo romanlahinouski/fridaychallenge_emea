@@ -1,40 +1,40 @@
 ﻿using RestaurantGuide.Domain.Restaurants.Dishes;
-using RestaurantGuide.Domain.Users;
+using RestaurantGuide.Domain.Guests;
 using RestaurantGuide.OrderFulfilment.Application.Restaurants.Roles;
-using RestaurantGuide.OrderFulfilment.Application.Users.Orders;
-using RestaurantGuide.OrderFulfilment.Domain.Users.Orders;
-using RestaurantGuide.OrderFulfilment.Users.Roles.OrderingUserRole;
+using RestaurantGuide.OrderFulfilment.Application.Guests.Orders;
+using RestaurantGuide.OrderFulfilment.Domain.Guests.Orders;
+using RestaurantGuide.OrderFulfilment.Guests.Roles.OrderingGuestRole;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace RestaurantGuide.OrderFulfilment.Users.Orders
+namespace RestaurantGuide.OrderFulfilment.Guests.Orders
 {
     public class PutOrderContext : IPutOrderContext
     {
-        private readonly IUserRepository userRepository;
+        private readonly IGuestRepository GuestRepository;
         private readonly IDishRepository dishRepository;
         private readonly IOrderRestaurantRole orderRestaurantRole;
-        private readonly IOrderingUserRole orderingUserRole;
+        private readonly IOrderingGuestRole orderingGuestRole;
 
         public PutOrderContext(
-            IUserRepository userRepository,
+            IGuestRepository GuestRepository,
             IDishRepository dishRepository,
             IOrderRestaurantRole orderRestaurantRole,
-            IOrderingUserRole orderingUserRole
+            IOrderingGuestRole orderingGuestRole
             )
         {
-            this.userRepository = userRepository;
+            this.GuestRepository = GuestRepository;
             this.dishRepository = dishRepository;
             this.orderRestaurantRole = orderRestaurantRole;
-            this.orderingUserRole = orderingUserRole;
+            this.orderingGuestRole = orderingGuestRole;
         }
 
 
-        public async Task  PutOrder(List<OrderItemDto> dishesDtos, int userId)
+        public async Task  PutOrder(List<OrderItemDto> dishesDtos, int GuestId)
         {
 
-            var user = await userRepository.GetUserById(userId);
+            var Guest = await GuestRepository.GetGuestById(GuestId);
 
 
             var dishes = await dishRepository
@@ -57,12 +57,12 @@ namespace RestaurantGuide.OrderFulfilment.Users.Orders
 
 
 
-            orderingUserRole.MakeOrder(order, user);
+            orderingGuestRole.MakeOrder(order, Guest);
 
 
-            userRepository.Update(user);
+            GuestRepository.Update(Guest);
 
-            await  userRepository.SaveChangesAsync();
+            await  GuestRepository.SaveChangesAsync();
         }
 
     }

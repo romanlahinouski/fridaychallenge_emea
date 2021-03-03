@@ -1,9 +1,9 @@
 ﻿using System;
 namespace RestaurantGuide_Administration.Application.Restaurants.Roles.RegistrationRestaurants
 {
-    public class UserNotExistException : Exception
+    public class GuestNotExistException : Exception
     {
-        public UserNotExistException(string message)
+        public GuestNotExistException(string message)
             : base(message)
         {
 

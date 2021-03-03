@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+option csharp_namespace = "RestaurantGuide.OrderFulfilment.API.Restaurants.Protos";
+
+
+
+service GuestRegistrationServiceProto {
+
+	rpc RegisterGuest(GuestRegistrationRequest) returns (google.protobuf.Empty);
+}
+
+
+
+message GuestRegistrationRequest{
+	string GuestFirstName = 1;
+	string GuestLastName = 2;
+	string GuestEmail = 3;
+	string GuestPhoneNumber = 4;
+	int32 RestaurantId = 5;
+}

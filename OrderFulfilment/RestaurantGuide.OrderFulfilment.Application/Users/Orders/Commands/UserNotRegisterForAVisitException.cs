@@ -1,18 +1,18 @@
-﻿using RestaurantGuide.Domain.Users;
+﻿using RestaurantGuide.Domain.Guests;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace RestaurantGuide.OrderFulfilment.Users.Orders
+namespace RestaurantGuide.OrderFulfilment.Guests.Orders
 {
-    public class UserNotRegisterForAVisitException : Exception
+    public class GuestNotRegisterForAVisitException : Exception
     {
-        public int UserId { get; set; }
+        public int GuestId { get; set; }
 
     
-        public UserNotRegisterForAVisitException(string message,int userId) : base(message)
+        public GuestNotRegisterForAVisitException(string message,int GuestId) : base(message)
         {
-            UserId = userId;
+            GuestId = GuestId;
         }
       
 

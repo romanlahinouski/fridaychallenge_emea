@@ -2,7 +2,7 @@
 using RestaurantGuide.Domain.Restaurants.Dishes;
 using RestaurantGuide.Domain.Restaurants.Dishes.Ingredients;
 using RestaurantGuide.Infrastructure.Base;
-using RestaurantGuide.OrderFulfilment.Infrastructure.Users;
+using RestaurantGuide.OrderFulfilment.Infrastructure.Guests;
 using System;
 using System.Collections.Generic;
 using System.Linq;

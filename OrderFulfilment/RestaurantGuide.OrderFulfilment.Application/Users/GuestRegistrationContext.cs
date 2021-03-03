@@ -1,32 +1,32 @@
 ﻿using RestaurantGuide.Domain.Restaurants;
-using RestaurantGuide.Domain.Users;
+using RestaurantGuide.Domain.Guests;
 using RestaurantGuide.Domain.Visits;
 using RestaurantGuide.OrderFulfilment.Application.Restaurants;
 using RestaurantGuide.OrderFulfilment.Application.Restaurants.Roles;
-using RestaurantGuide.OrderFulfilment.Users.Roles;
+using RestaurantGuide.OrderFulfilment.Guests.Roles;
 using System;
 using System.Threading.Tasks;
 
 
 namespace RestaurantGuide.OrderFulfilment.Application
 {
-    public class UserRegistrationContext : IUserRegistrationContext
+    public class GuestRegistrationContext : IGuestRegistrationContext
     {
         private readonly IRegistrationRestaurantRole registrationRestaurantRole;
-        private readonly IRegisteringUserRole registeringUserRole;
+        private readonly IRegisteringGuestRole registeringGuestRole;
         private readonly IRestaurantRepository restaurantRepository;
-        private readonly IUserRepository userRepository;
+        private readonly IGuestRepository GuestRepository;
 
-        public UserRegistrationContext(IRestaurantRepository restaurantRepository,
-            IUserRepository userRepository,
+        public GuestRegistrationContext(IRestaurantRepository restaurantRepository,
+            IGuestRepository GuestRepository,
             IRegistrationRestaurantRole registrationRestaurantRole,
-            IRegisteringUserRole registeringUserRole
+            IRegisteringGuestRole registeringGuestRole
             )           
         {         
             this.restaurantRepository = restaurantRepository;
-            this.userRepository = userRepository;
+            this.GuestRepository = GuestRepository;
             this.registrationRestaurantRole = registrationRestaurantRole;
-            this.registeringUserRole = registeringUserRole;
+            this.registeringGuestRole = registeringGuestRole;
         }
 
         //public void Test()
@@ -34,9 +34,9 @@ namespace RestaurantGuide.OrderFulfilment.Application
         //    IBaseRole<Restaurant> baseRole = new RegistrationRestaurantRole();
         //}
 
-        //userId -> email(string)
+        //GuestId -> email(string)
 
-        public async Task RegisterUser(RegisterUserCommand request)
+        public async Task RegisterGuest(RegisterGuestCommand request)
         {
            
            var restaurant = await restaurantRepository.GetRestaurantById(request.RestaurantId);
@@ -48,22 +48,22 @@ namespace RestaurantGuide.OrderFulfilment.Application
             }                
            
            
-           var user = await userRepository.GetUserByEmail(request.Email);
+           var Guest = await GuestRepository.GetGuestByEmail(request.Email);
 
-             if(user == null)
+             if(Guest == null)
             {
-                throw new ArgumentNullException("User is not present in the system");
+                throw new ArgumentNullException("Guest is not present in the system");
             }
 
-            registrationRestaurantRole.RegisterUser(user, restaurant);
+            registrationRestaurantRole.RegisterGuest(Guest, restaurant);
 
             var visit = Visit.CreateVisit(request.RestaurantId, DateTime.Now, 0);
 
-            registeringUserRole.SetVisit(user, visit);
+            registeringGuestRole.SetVisit(Guest, visit);
        
-            userRepository.Update(user);
+            GuestRepository.Update(Guest);
        
-            await userRepository.SaveChangesAsync();
+            await GuestRepository.SaveChangesAsync();
            
         }
     }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace RestaurantGuide.OrderFulfilment.Domain.Users.Orders
+namespace RestaurantGuide.OrderFulfilment.Domain.Guests.Orders
 {
     public class Order
     {

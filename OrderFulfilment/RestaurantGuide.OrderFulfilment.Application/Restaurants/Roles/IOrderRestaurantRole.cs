@@ -1,6 +1,6 @@
 ﻿using RestaurantGuide.Domain.Base;
 using RestaurantGuide.Domain.Restaurants;
-using RestaurantGuide.OrderFulfilment.Domain.Users.Orders;
+using RestaurantGuide.OrderFulfilment.Domain.Guests.Orders;
 
 namespace RestaurantGuide.OrderFulfilment.Application.Restaurants.Roles
 {

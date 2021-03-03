@@ -1,5 +1,5 @@
 ﻿using System;
-namespace RestaurantGuide.OrderFulfilment.Application.Users.Orders
+namespace RestaurantGuide.OrderFulfilment.Application.Guests.Orders
 {
     public class OrderItemDto
     {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RestaurantGuide.OrderFulfilment.Domain.Orders;
-using RestaurantGuide.OrderFulfilment.Domain.Users.Orders;
-using RestaurantGuide.OrderFulfilment.Infrastructure.Users;
+using RestaurantGuide.OrderFulfilment.Domain.Guests.Orders;
+using RestaurantGuide.OrderFulfilment.Infrastructure.Guests;
 using System;
 using System.Threading.Tasks;
 
@@ -25,7 +25,7 @@ namespace RestaurantGuide.OrderFulfilment.Infrastructure.Orders
                 .FirstOrDefaultAsync(x => x.OrderId == orderId);
         }
 
-        public Order GetUnpaidOrders(int userId)
+        public Order GetUnpaidOrders(int GuestId)
         {
             throw new NotImplementedException();
         }

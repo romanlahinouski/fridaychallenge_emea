@@ -8,7 +8,7 @@ using MediatR;
 using RestaurantGuide.OrderFulfilment.Application.Orders.Queries;
 using RestaurantGuide.OrderFulfilment.Application.Restaurants.Dishes.Queries;
 using RestaurantGuide.OrderFulfilment.Infrastructure.Orders.Protos;
-using RestaurantGuide.OrderFulfilment.Users.Orders;
+using RestaurantGuide.OrderFulfilment.Guests.Orders;
 
 namespace RestaurantGuide.OrderFulfilment.Infrastructure.Orders
 {
@@ -44,10 +44,10 @@ namespace RestaurantGuide.OrderFulfilment.Infrastructure.Orders
 
             var dishesProto = request.OrderItems.ToList();
 
-            var dishesDto = mapper.Map <List<Application.Users.Orders.OrderItemDto>>(dishesProto);
+            var dishesDto = mapper.Map <List<Application.Guests.Orders.OrderItemDto>>(dishesProto);
 
 
-            await mediator.Send(new PutOrderCommand(dishesDto, request.UserId));
+            await mediator.Send(new PutOrderCommand(dishesDto, request.GuestId));
 
             return new Empty();
         }

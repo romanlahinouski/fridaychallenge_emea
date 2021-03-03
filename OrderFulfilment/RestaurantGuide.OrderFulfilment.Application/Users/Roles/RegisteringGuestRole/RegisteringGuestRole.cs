@@ -1,25 +1,25 @@
 ﻿using RestaurantGuide.Domain.Visits;
-using RestaurantGuide.OrderFulfilment.Domain.Users;
+using RestaurantGuide.OrderFulfilment.Domain.Guests;
 
 
-namespace RestaurantGuide.OrderFulfilment.Users.Roles
+namespace RestaurantGuide.OrderFulfilment.Guests.Roles
 {
-    public class RegisteringUserRole : IRegisteringUserRole
+    public class RegisteringGuestRole : IRegisteringGuestRole
     {
        
-        public RegisteringUserRole()
+        public RegisteringGuestRole()
         {
            
         }
 
-        //public User GetValue()
+        //public Guest GetValue()
         //{
-        //    return user;
+        //    return Guest;
         //}
 
-        public void SetVisit(User user,Visit visit)
+        public void SetVisit(Guest Guest,Visit visit)
         {
-            user.SetVisit(visit);
+            Guest.SetVisit(visit);
         }
     }
 }

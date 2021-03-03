@@ -12,7 +12,6 @@
     <None Remove="Orders\Protos\OrderDetailsDtoMessage.proto" />
     <None Remove="Orders\Protos\OrderFulfilmentService.proto" />
     <None Remove="Orders\Protos\OrderItemDtoMessage.proto" />
-    <None Remove="Restaurants\Protos\RegisterUserMessage.proto" />
   </ItemGroup>
 
   <ItemGroup>
@@ -42,6 +41,5 @@
     <Protobuf Include="Orders\Protos\OrderDetailsDtoMessage.proto" GrpcServices="None" />
     <Protobuf Include="Orders\Protos\OrderFulfilmentService.proto" GrpcServices="Server" />
     <Protobuf Include="Orders\Protos\OrderItemDtoMessage.proto" GrpcServices="None" />
-    <Protobuf Include="Restaurants\Protos\RegisterUserMessage.proto" GrpcServices="Server" />
   </ItemGroup>
 </Project>

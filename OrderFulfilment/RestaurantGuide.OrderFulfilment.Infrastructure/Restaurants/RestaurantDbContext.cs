@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using RestaurantGuide.Domain.Restaurants;
-using RestaurantGuide.Domain.Restaurants.RestaurantUsers;
+using RestaurantGuide.Domain.Restaurants.RestaurantGuests;
 
 namespace RestaurantGuide.OrderFulfilment.Infrastructure.Restaurants
 {
@@ -38,9 +38,9 @@ namespace RestaurantGuide.OrderFulfilment.Infrastructure.Restaurants
                 .Property("maxNumberOfGuests").HasColumnName("MaxNumberOfGuests");
 
             modelBuilder.Entity<Restaurant>()
-                .HasMany<RestaurantUser>();
+                .HasMany<RestaurantGuest>();
 
-            modelBuilder.Entity<RestaurantUser>().ToTable("RestaurantUsers");
+            modelBuilder.Entity<RestaurantGuest>().ToTable("RestaurantGuests");
 
         }
 

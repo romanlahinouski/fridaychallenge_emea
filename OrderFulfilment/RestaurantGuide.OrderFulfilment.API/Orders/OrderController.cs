@@ -3,13 +3,13 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using RestaurantGuide.OrderFulfilment.Application.Restaurants.Dishes.Queries;
-using RestaurantGuide.OrderFulfilment.Users.Orders;
+using RestaurantGuide.OrderFulfilment.Guests.Orders;
 
 namespace RestaurantGuide.OrderFulfilment.API.Orders
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    [TypeFilter(typeof(UserNotRegisteredExceptionFilter))]
+    [TypeFilter(typeof(GuestNotRegisteredExceptionFilter))]
     public class OrderController : ControllerBase
     {
         private readonly IMediator mediator;
@@ -24,7 +24,7 @@ namespace RestaurantGuide.OrderFulfilment.API.Orders
         {     
             await mediator.Send(new PutOrderCommand(
                 orderDto.Dishes.ToList(), 
-                orderDto.UserId));
+                orderDto.GuestId));
         
             return Ok("Order Received");
         }

@@ -1,13 +1,13 @@
 ﻿using Autofac;
 using RestaurantGuide.Domain.Restaurants;
 using RestaurantGuide.Domain.Restaurants.Dishes;
-using RestaurantGuide.Domain.Users;
-using RestaurantGuide.OrderFulfilment.Domain.Users.Orders;
+using RestaurantGuide.Domain.Guests;
+using RestaurantGuide.OrderFulfilment.Domain.Guests.Orders;
 using RestaurantGuide.OrderFulfilment.Infrastructure;
 using RestaurantGuide.OrderFulfilment.Infrastructure.Orders;
 using RestaurantGuide.OrderFulfilment.Infrastructure.Restaurants;
 using RestaurantGuide.OrderFulfilment.Infrastructure.Restaurants.Dishes;
-using RestaurantGuide.OrderFulfilment.Infrastructure.Users;
+using RestaurantGuide.OrderFulfilment.Infrastructure.Guests;
 
 namespace RestaurantGuide.OrderFulfilment.Modules
 {
@@ -22,8 +22,8 @@ namespace RestaurantGuide.OrderFulfilment.Modules
                 .SingleInstance();
 
 
-            builder.RegisterType<UserRepository>()
-                .As<IUserRepository>()
+            builder.RegisterType<GuestRepository>()
+                .As<IGuestRepository>()
                 .SingleInstance();
 
             builder.RegisterType<RestaurantRepository>()

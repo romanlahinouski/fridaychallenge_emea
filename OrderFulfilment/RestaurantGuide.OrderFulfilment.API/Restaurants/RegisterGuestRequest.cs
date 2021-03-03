@@ -1,6 +1,6 @@
 ﻿namespace RestaurantGuide.OrderFulfilment.API.Restaurants
 {
-    public class RegisterUserRequest
+    public class RegisterGuestRequest
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using RestaurantGuide.Domain.Restaurants.Dishes;
-using RestaurantGuide.OrderFulfilment.Users.Orders;
+using RestaurantGuide.OrderFulfilment.Guests.Orders;
 using System;
 using System.Collections.Generic;
 using System.Text;

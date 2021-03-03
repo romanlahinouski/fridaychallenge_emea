@@ -4,15 +4,15 @@ using RestaurantGuide.Domain.Restaurants.Dishes;
 using RestaurantGuide.Domain.Restaurants.Dishes.Ingredients;
 using RestaurantGuide.Domain.Visits;
 using RestaurantGuide.OrderFulfilment.Domain.Restaurants.Dishes;
-using RestaurantGuide.OrderFulfilment.Domain.Users;
-using RestaurantGuide.OrderFulfilment.Domain.Users.Orders;
+using RestaurantGuide.OrderFulfilment.Domain.Guests;
+using RestaurantGuide.OrderFulfilment.Domain.Guests.Orders;
 using System;
 
-namespace RestaurantGuide.OrderFulfilment.Infrastructure.Users
+namespace RestaurantGuide.OrderFulfilment.Infrastructure.Guests
 {
     public class OrderFulfilmentDbContext : DbContext
     {
-        public DbSet<User> Users { get; set; }
+        public DbSet<Guest> Guests { get; set; }
         public DbSet<Visit> Visits { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Dish> Dishes { get; set; }
@@ -47,31 +47,31 @@ namespace RestaurantGuide.OrderFulfilment.Infrastructure.Users
         {
 
             modelBuilder
-                .Entity<User>()
-                .ToTable("Users");
+                .Entity<Guest>()
+                .ToTable("Guests");
             modelBuilder
-                .Entity<User>()
-                .HasKey(v => v.UserId);
+                .Entity<Guest>()
+                .HasKey(v => v.GuestId);
             modelBuilder
-                .Entity<User>()
+                .Entity<Guest>()
                 .Property<string>("FirstName")
                 .HasColumnName("FirstName");
             modelBuilder
-               .Entity<User>()
+               .Entity<Guest>()
                .Property<string>("LastName")
                .HasColumnName("LastName");
             modelBuilder
-              .Entity<User>()
+              .Entity<Guest>()
               .Property<string>("Email")
               .HasColumnName("Email")
               .IsRequired();
             modelBuilder
-               .Entity<User>()
+               .Entity<Guest>()
                .Property<string>("PhoneNumber")
                .HasColumnName("PhoneNumber")
                .IsRequired();
             modelBuilder
-              .Entity<User>()
+              .Entity<Guest>()
               .HasMany(x => x.Visits);
 
 

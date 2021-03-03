@@ -4,7 +4,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace RestaurantGuide.OrderFulfilment.Users.Orders
+namespace RestaurantGuide.OrderFulfilment.Guests.Orders
 {
     public class PutOrderCommandHandler : AsyncRequestHandler<PutOrderCommand>
     {
@@ -18,7 +18,7 @@ namespace RestaurantGuide.OrderFulfilment.Users.Orders
         protected override async Task Handle(PutOrderCommand request, CancellationToken cancellationToken)
         {
             await putOrderContext.PutOrder(request.DishItems,
-              request.UserId); 
+              request.GuestId); 
 
 
 

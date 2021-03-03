@@ -7,8 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using RestaurantGuide.Domain.Base;
 using RestaurantGuide.Domain.Restaurants;
-using RestaurantGuide.Domain.Users;
-using RestaurantGuide.OrderFulfilment.Domain.Users;
+using RestaurantGuide.Domain.Guests;
+using RestaurantGuide.OrderFulfilment.Domain.Guests;
 
 namespace RestaurantGuide.Domain.Restaurants
 {
@@ -16,7 +16,7 @@ namespace RestaurantGuide.Domain.Restaurants
     {
         public Task<IReadOnlyCollection<Restaurant>> GetAll();
   
-        public IReadOnlyCollection<User> GetRestaurantUsers(int restaurantId);
+        public IReadOnlyCollection<Guest> GetRestaurantGuests(int restaurantId);
 
         public Task<Restaurant> GetRestaurantById(int restaurantId);
 

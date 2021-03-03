@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using RestaurantGuide.OrderFulfilment.Application.Users.Orders;
+using RestaurantGuide.OrderFulfilment.Application.Guests.Orders;
 
 namespace RestaurantGuide.OrderFulfilment.Infrastructure.Restaurants.Dishes.Mappings
 {
@@ -9,7 +9,7 @@ namespace RestaurantGuide.OrderFulfilment.Infrastructure.Restaurants.Dishes.Mapp
         public OrderItemDtoProtoOrderItemProfile()
         {
             CreateMap<Infrastructure.Orders.Protos.OrderItemDto, 
-             Domain.Users.Orders.OrderItem>()
+             Domain.Guests.Orders.OrderItem>()
                 .ReverseMap();          
         }
 

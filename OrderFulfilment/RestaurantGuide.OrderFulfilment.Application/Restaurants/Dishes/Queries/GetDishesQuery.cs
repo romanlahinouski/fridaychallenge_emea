@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using RestaurantGuide.OrderFulfilment.Users.Orders;
+using RestaurantGuide.OrderFulfilment.Guests.Orders;
 using System;
 using System.Collections.Generic;
 using System.Text;

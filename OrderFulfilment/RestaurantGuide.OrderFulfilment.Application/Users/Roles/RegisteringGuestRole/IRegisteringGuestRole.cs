@@ -1,13 +1,13 @@
 ﻿using RestaurantGuide.Domain.Base;
-using RestaurantGuide.Domain.Users;
+using RestaurantGuide.Domain.Guests;
 using RestaurantGuide.Domain.Visits;
-using RestaurantGuide.OrderFulfilment.Domain.Users;
+using RestaurantGuide.OrderFulfilment.Domain.Guests;
 using System;
 
-namespace RestaurantGuide.OrderFulfilment.Users.Roles
+namespace RestaurantGuide.OrderFulfilment.Guests.Roles
 {
-    public interface IRegisteringUserRole : IBaseRole<User>
+    public interface IRegisteringGuestRole : IBaseRole<Guest>
     {
-        public void SetVisit(User user, Visit visit);
+        public void SetVisit(Guest Guest, Visit visit);
     }
 }

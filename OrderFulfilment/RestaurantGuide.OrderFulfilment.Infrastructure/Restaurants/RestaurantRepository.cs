@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RestaurantGuide.Domain.Restaurants;
 using RestaurantGuide.Infrastructure.Base;
-using RestaurantGuide.OrderFulfilment.Domain.Users;
+using RestaurantGuide.OrderFulfilment.Domain.Guests;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,7 +29,7 @@ namespace RestaurantGuide.OrderFulfilment.Infrastructure.Restaurants
             return await restaurantDbContext.Restaurants.FirstOrDefaultAsync(r => r.Id == restaurantId);
         }
 
-        public IReadOnlyCollection<User> GetRestaurantUsers(int restaurantId)
+        public IReadOnlyCollection<Guest> GetRestaurantGuests(int restaurantId)
         {
             throw new NotImplementedException();
         }
@@ -42,14 +42,14 @@ namespace RestaurantGuide.OrderFulfilment.Infrastructure.Restaurants
         }
 
        
-        public async Task<IReadOnlyCollection<Restaurant>> GetRestaurantWithUserIncluded(int restaurantId)
+        public async Task<IReadOnlyCollection<Restaurant>> GetRestaurantWithGuestIncluded(int restaurantId)
         {
             var restaurants = await restaurantDbContext.Restaurants
                 .Where(r => r.Id == restaurantId)
-                .Include("currentUsers")
+                .Include("currentGuests")
                 .ToListAsync();
 
-            //var users = restaurant.
+            //var Guests = restaurant.
 
             return restaurants;
         }

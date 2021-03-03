@@ -18,7 +18,7 @@ using RestaurantGuide.OrderFulfilment.Infrastructure;
 using RestaurantGuide.OrderFulfilment.Infrastructure.Orders;
 using RestaurantGuide.OrderFulfilment.Infrastructure.Restaurants;
 using RestaurantGuide.OrderFulfilment.Infrastructure.Restaurants.Dishes;
-using RestaurantGuide.OrderFulfilment.Infrastructure.Users;
+using RestaurantGuide.OrderFulfilment.Infrastructure.Guests;
 using RestaurantGuide.OrderFulfilment.Modules;
 
 namespace RestaurantGuide.OrderFulfilment.API
@@ -100,7 +100,7 @@ namespace RestaurantGuide.OrderFulfilment.API
             {
                 endpoints.MapControllers();
                 endpoints.MapGrpcService<OrderFulfimentGrpcService>();
-                endpoints.MapGrpcService<UserRegistrationService>();
+                endpoints.MapGrpcService<GuestRegistrationService>();
             });
         }
     }

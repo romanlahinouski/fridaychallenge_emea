@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using RestaurantGuide.Domain.Base;
-using RestaurantGuide.OrderFulfilment.Domain.Users;
+using RestaurantGuide.OrderFulfilment.Domain.Guests;
 
-namespace RestaurantGuide.Domain.Users
+namespace RestaurantGuide.Domain.Guests
 {
-    public interface IUserRepository : IRepository
+    public interface IGuestRepository : IRepository
     {
-        public Task<User> GetUserById(int useriD);
+        public Task<Guest> GetGuestById(int GuestiD);
 
-        public Task Add(User user);
+        public Task Add(Guest Guest);
 
-        public Task<User> GetUserByEmail(string email);
+        public Task<Guest> GetGuestByEmail(string email);
 
-        public void Update(User user);
+        public void Update(Guest Guest);
 
 
     }

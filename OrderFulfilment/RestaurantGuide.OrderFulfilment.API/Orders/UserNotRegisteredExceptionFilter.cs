@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using RestaurantGuide.OrderFulfilment.Infrastructure;
-using RestaurantGuide.OrderFulfilment.Users.Orders;
+using RestaurantGuide.OrderFulfilment.Guests.Orders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 
 namespace RestaurantGuide.OrderFulfilment.API.Orders
 {
-    public class UserNotRegisteredExceptionFilter : ExceptionFilterAttribute
+    public class GuestNotRegisteredExceptionFilter : ExceptionFilterAttribute
     {
 
-        public UserNotRegisteredExceptionFilter()
+        public GuestNotRegisteredExceptionFilter()
         {
         
         }
@@ -26,11 +26,11 @@ namespace RestaurantGuide.OrderFulfilment.API.Orders
             if (ae != null)
                 foreach (var e in ae.Flatten().InnerExceptions)
                 {
-                    var exec = e as UserNotRegisterForAVisitException;
+                    var exec = e as GuestNotRegisterForAVisitException;
 
                     if (exec != null)
                     {
-                        string errorMessage = $"User with id {exec.UserId} is not register for a visit, please register a user first";
+                        string errorMessage = $"Guest with id {exec.GuestId} is not register for a visit, please register a Guest first";
                                                                   
                         var result = new BadRequestObjectResult(errorMessage);
                         context.Result = result;
