@@ -53,11 +53,12 @@
     </Content>
   </ItemGroup>
 
+
+
+
   <ItemGroup>
-    <None Update="startApp.sh">
+    <None Update="StartOrderfulfilmentApi.sh">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-
-
 </Project>
