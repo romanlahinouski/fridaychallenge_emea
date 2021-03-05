@@ -4,8 +4,8 @@ export  CORECLR_PROFILER_PATH=./libappdprofiler.so
 
 
 cd /home/centos/Gateway
-chmod 777 startApp.sh
-./startApp.sh
+chmod 777 StartGatewayApi.sh
+./StartGatewayApi.sh
 cd ..
 cd /home/centos/Orderfulfilment
 ./startApp.sh
