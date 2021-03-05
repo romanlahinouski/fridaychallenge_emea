@@ -8,5 +8,6 @@ chmod 777 StartGatewayApi.sh
 ./StartGatewayApi.sh
 cd ..
 cd /home/centos/Orderfulfilment
-./startApp.sh
+chmod 777 StartOrderfulfilmentApi.sh
+./StartOrderfulfilmentApi.sh
 
